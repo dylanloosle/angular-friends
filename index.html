@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-ng-app="myApp">
+<html data-ng-app="myApp" xmlns:filter="http://www.w3.org/1999/xhtml">
 <head>
   <title>Angular Friends</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -38,11 +38,18 @@
     <ul  data-ng-repeat="friend in friends | filter: searchTerm">
       <li class='friend'> Name: {{friend.name}}</li>
         <img ng-src="{{friend.pic_square}}"/>
-        <h3> {{friend.current_location.state}}</h3>
 
         <div class="status">
           {{friend.status.message}}
         </div>
+
+      <div class="city">
+        {{friend.current_location.city}}
+      </div>
+      <h3> {{friend.current_location.state}}</h3>
+      <div class="country">
+        {{friend.current_location.country}}
+      </div>
 
         <div class="num-friends">
           Friend count: {{friend.friend_count}}
