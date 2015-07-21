@@ -433,7 +433,29 @@ app.controller('friendController', function($scope){
       }
   ];
     $scope.searchTerm = [];
-    var sortable = [];
+    $scope.reverse = '';
+    $scope.options = [
+        {
+            value: 'name', name: 'Name'
+        },
+        {
+            value: 'friend_count', name: 'Number of Friends'
+        },
+        {
+            value: 'current_location.city', name: 'City'
+        },
+        {
+            value: 'current_location.state', name: 'State'
+        },
+        {
+            value: 'current_location.country', name: 'Country'
+        },
+        {
+            value: 'selected', name: 'Country'
+        }
+    ];
+
+    $scope.selectedOption = '';
 
 });
 
