@@ -433,7 +433,7 @@ app.controller('friendController', function($scope){
       }
   ];
     $scope.searchTerm = [];
-
+    var sortable = [];
 
 });
 

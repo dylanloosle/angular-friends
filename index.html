@@ -16,11 +16,11 @@
 
 
         <input class="form-control" placeholder="Search Name" data-ng-model="searchTerm.name">
-        <input class="form-control" placeholder="Search Location" data-ng-model="searchTerm.current_location.state">
+        <input class="form-control" placeholder="Search Location" data-ng-model="searchTerm.current_location.city">
 
 
         <select class="input-medium">
-          <option>Name</option>
+          <option data-ng-model="sortable | orderBy: 'friend.name'">Name</option>
           <option>#Friends</option>
           <option>City</option>
           <option>State</option>
@@ -35,7 +35,7 @@
       </div>
     </form>
 
-    <ul  data-ng-repeat="friend in friends | filter: searchTerm">
+    <ul  data-ng-repeat="friend in friends | filter: searchTerm | orderBy: 'sortable'">
       <li class='friend'> Name: {{friend.name}}</li>
         <img ng-src="{{friend.pic_square}}"/>
 
