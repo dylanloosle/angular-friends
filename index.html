@@ -10,7 +10,7 @@
 
   <h1>The <strong>facebook</strong> Friend Machine</h1>
 
-  <div class="friends">
+  <li class="friends">
     <form class="form-inline searchForm" role="form">
       <div class="form-group">
 
@@ -39,21 +39,21 @@
       <li class='friend'> Name: {{friend.name}}</li>
         <img ng-src="{{friend.pic_square}}"/>
 
-        <div class="status">
+        <li class="status">
           {{friend.status.message}}
-        </div>
+        </li>
 
-      <div class="city">
+      <li class="city">
         {{friend.current_location.city}}
-      </div>
+      </li>
       <h3> {{friend.current_location.state}}</h3>
-      <div class="country">
+      <li class="country">
         {{friend.current_location.country}}
-      </div>
+      </li>
 
-        <div class="num-friends">
+        <li class="num-friends">
           Friend count: {{friend.friend_count}}
-        </div>
+        </li>
       </li>
     </ul>
   </div>
