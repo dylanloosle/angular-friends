@@ -432,8 +432,8 @@ app.controller('friendController', function($scope){
           "$$hashKey": "02U"
       }
   ];
-    $scope.searchTerm = [];
-    $scope.reverse = '';
+    //$scope.searchTerm = [];
+    //$scope.reverse = '';
     $scope.options = [
         {
             value: 'name', name: 'Name'
@@ -455,7 +455,7 @@ app.controller('friendController', function($scope){
         }
     ];
 
-    $scope.selectedOption = '';
+    //$scope.selectedOption = '';
 
 });
 

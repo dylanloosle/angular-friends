@@ -15,8 +15,8 @@
       <div class="form-group">
 
 
-        <input class="form-control" placeholder="Search Name" data-ng-model="searchTerm.name">
-        <input class="form-control" placeholder="Search Location" data-ng-model="searchTerm.current_location.city">
+        <input class="form-control" placeholder="Search Name" ng-model="searchTerm.name">
+        <input class="form-control" placeholder="Search Location" ng-model="searchTerm.current_location.city">
 
 
         <select class="input-medium" ng-model="selectedOption" ng-init ="selectedOption = options[0].value" ng-options="option.value as option.name for option in options">
@@ -35,26 +35,25 @@
       </div>
     </form>
 
-    <ul  data-ng-repeat="friend in friends | filter: searchTerm | orderBy:selectedOption:reverse">
-      <li class='friend'> Name: {{friend.name}}</li>
-        <img ng-src="{{friend.pic_square}}"/>
+    <ul>
+      <li class='friend' data-ng-repeat="friend in friends | filter: searchTerm | orderBy:selectedOption:reverse">
+        <img class="profile-pic" ng-src="{{friend.pic_square}}"/>
 
-        <li class="status">
-          {{friend.status.message}}
-        </li>
+        <h3>{{friend.name}}</h3>
 
-      <li class="city">
-        {{friend.current_location.city}}
-      </li>
-      <h3> {{friend.current_location.state}}</h3>
-      <li class="country">
-        {{friend.current_location.country}}
-      </li>
+      <div class="location">
+       Location: {{friend.current_location.name}}
+      </div>
 
-        <li class="num-friends">
-          Friend count: {{friend.friend_count}}
-        </li>
+        <div class="status">
+          Friend count: {{friend.status.message}}
+          <span></span>
+        </div>
+        <div class="num-friends">
+          <p>Friends: {{friend.friend_count}}</p>
+        </div>
       </li>
+    </li>
     </ul>
   </div>
   <div>
